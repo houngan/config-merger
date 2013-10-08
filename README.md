@@ -1,4 +1,4 @@
-file-config-merger
+config-merger
 ==================
 
-Utility to merge config settings from multiple files in same path
+Utility to merge config settings from multiple sources

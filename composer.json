@@ -1,0 +1,20 @@
+{
+    "name": "houngan/config-merger",
+    "description": "Merges arrays from multiple files",
+    "license": "GPL v2",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Simonas Nareckas",
+            "email": "simasn@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "5.4.*",
+        "zendframework/zend-stdlib": "2.*"
+    },
+
+    "autoload": {
+        "psr-0": { "ConfigMerger": "src/" }
+    }
+}

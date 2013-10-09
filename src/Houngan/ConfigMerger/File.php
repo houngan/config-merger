@@ -41,7 +41,7 @@ class File implements MergeProviderInterface
             throw new Exception\PathNotFoundException($path);
         }
 
-        $this->path = $path;
+        $this->path = rtrim($path, DIRECTORY_SEPARATOR);
     }
 
     /**
@@ -58,16 +58,22 @@ class File implements MergeProviderInterface
      * Returns config from one file
      *
      * @param string $source Full path to file
-     * @return array
+     * @throws Exception\InvalidSourceFormatException
      * @throws Exception\FileNotFoundException
+     * @return array
      */
     protected function getConfig($source)
     {
-        $filepath = $this->getPath() . '/' . $source;
+        $filepath = $this->getPath() . DIRECTORY_SEPARATOR . $source;
         if (!is_readable($filepath)) {
             throw new Exception\FileNotFoundException($filepath);
         }
 
-        return require_once $filepath;
+        $config = require $filepath;
+        if (!is_array($config)) {
+            throw new Exception\InvalidSourceFormatException($filepath);
+        }
+
+        return $config;
     }
 }

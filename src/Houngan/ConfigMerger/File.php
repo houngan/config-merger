@@ -1,8 +1,7 @@
 <?php
 
-namespace ConfigMerger;
+namespace Houngan\ConfigMerger;
 
-use ConfigMerger\MergeProviderInterface;
 use Zend\Stdlib\ArrayUtils;
 
 class File implements MergeProviderInterface

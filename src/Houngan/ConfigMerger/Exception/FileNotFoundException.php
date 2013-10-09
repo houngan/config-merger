@@ -1,5 +1,5 @@
 <?php
-namespace ConfigMerger\Exception;
+namespace Houngan\ConfigMerger\Exception;
 
 class FileNotFoundException extends \Exception
 {

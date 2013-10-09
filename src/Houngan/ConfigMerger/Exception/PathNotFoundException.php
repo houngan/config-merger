@@ -1,6 +1,6 @@
 <?php
 
-namespace ConfigMerger\Exception;
+namespace Houngan\ConfigMerger\Exception;
 
 
 class PathNotFoundException extends \Exception
